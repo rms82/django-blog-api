@@ -1,0 +1,22 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% translate "Post Delete" %}
+    <form method="POST">
+        {% csrf_token %}
+        <p>{% translate "Are you sure to delete post" %} {{ object }}?</p>
+        <input type="submit" value='Delete'>
+    </form>
+    <hr>
+    <a href="{% url 'blog:home' %}">{% translate "Back to home" %}</a>
+
+</body>
+</html>
