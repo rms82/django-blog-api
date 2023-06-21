@@ -1,13 +1,17 @@
 from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework_simplejwt.views import TokenObtainPairView
+from django.shortcuts import get_object_or_404
+from django.core.mail import send_mail
 
-from .serializers import RegisterSerializer, CustomTokenObtainPairSerializer, ChangePasswordSerializer
+from .serializers import (RegisterSerializer, CustomTokenObtainPairSerializer,
+                          ChangePasswordSerializer, ProfileSerializer, AuthTokenSerializer)
+from accounts.models import Profile
 
 
 class Home(APIView):
@@ -36,6 +40,7 @@ class RegisterApi(GenericAPIView):
 
 
 class CustomAuthToken(ObtainAuthToken):
+    serializer_class = AuthTokenSerializer
 
     def post(self, request, *args, **kwargs):
         serializer = self.serializer_class(data=request.data,
@@ -88,3 +93,29 @@ class ChangePasswordApiView(GenericAPIView):
             return Response({'detail': 'Password Changed Successfully!'}, status=status.HTTP_200_OK)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ProfileApiView(RetrieveUpdateAPIView):
+    permission_classes = [IsAuthenticated,]
+    serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
+
+    def get_object(self):
+        queryset = self.queryset
+        obj = get_object_or_404(queryset, user=self.request.user)
+
+        return obj
+
+
+class Email(APIView):
+    def get(self, request, *args, **kwargs):
+        send_mail(
+            "This is the title",
+            "Here is the message.",
+            "from@example.com",
+            ["to@example.com"],
+            fail_silently=False,
+        )
+        return Response({
+            'detail': 'sent'
+        })

@@ -12,7 +12,7 @@ class CustomUserAdmin(UserAdmin):
     form = CustomUserChangeForm
     model = CustomUser
 
-    list_display = ['username', 'email', 'age', 'is_staff']
+    list_display = ['username', 'email', 'age', 'is_staff', 'is_verify']
     fieldsets = (
         ('Authentication', {
             "fields": (
@@ -22,7 +22,7 @@ class CustomUserAdmin(UserAdmin):
 
         ('permissions', {
             "fields": (
-                'is_staff', 'is_active',
+                'is_staff', 'is_active', 'is_verify'
             ),
         }),
 
@@ -41,7 +41,7 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         ('Register', {
             "fields": (
-                'username', 'email', 'password1', 'password2', 'age', 'is_staff', 'is_active',
+                'username', 'email', 'password1', 'password2', 'age', 'is_staff', 'is_active', 'is_verify'
             ),
         }),
     )

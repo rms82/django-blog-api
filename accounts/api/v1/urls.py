@@ -1,7 +1,7 @@
 # from rest_framework.authtoken.views import ObtainAuthToken
 from django.urls import path
 from .views import (Home, RegisterApi, CustomAuthToken, DestroyToken,
-                    CustomTokenObtainPairView, ChangePasswordApiView)
+                    CustomTokenObtainPairView, ChangePasswordApiView, ProfileApiView, Email)
 from rest_framework_simplejwt.views import TokenRefreshView, TokenVerifyView
 
 app_name = 'api-v1'
@@ -11,11 +11,15 @@ urlpatterns = [
     # Register
     path('register/', RegisterApi.as_view(), name='register'),
 
+    # Email
+    path('active/', Email.as_view()),
+
     # Password
     path('change/password/', ChangePasswordApiView.as_view(), name='change_password'),
 
     # Profile
-    
+    path('profile/', ProfileApiView.as_view(), name='profile'),
+
 
     # Token Auth
     path('token/login/', CustomAuthToken.as_view(), name='token_login'),
