@@ -1,0 +1,114 @@
+[
+    {
+        "model": "blog.post",
+        "pk": 1,
+        "fields": {
+            "author": 12,
+            "title": "Beautiful Sunset",
+            "image": "images/sunset.jpg",
+            "content": "Witness the breathtaking beauty of a sunset.",
+            "published": true,
+            "created_date": "2022-01-01T12:00:00Z",
+            "updated_date": "2023-06-26T10:10:08.678Z",
+            "published_date": "2022-01-02T10:30:00Z",
+            "category": [
+                9,
+                10,
+                17
+            ]
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 2,
+        "fields": {
+            "author": 12,
+            "title": "Delicious Pasta Recipe",
+            "image": "images/pasta.jpg",
+            "content": "Learn how to make a mouthwatering pasta dish.",
+            "published": true,
+            "created_date": "2022-02-01T09:00:00Z",
+            "updated_date": "2023-06-26T10:10:22.612Z",
+            "published_date": "2022-02-02T11:45:00Z",
+            "category": [
+                8,
+                10
+            ]
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 3,
+        "fields": {
+            "author": 12,
+            "title": "Exploring the Coral Reef",
+            "image": "images/coral-reef.jpg",
+            "content": "Dive into the mesmerizing world of coral reefs.",
+            "published": true,
+            "created_date": "2022-03-01T14:30:00Z",
+            "updated_date": "2023-06-26T10:10:43.341Z",
+            "published_date": "2022-03-02T16:15:00Z",
+            "category": [
+                9,
+                16
+            ]
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 4,
+        "fields": {
+            "author": 12,
+            "title": "Adventures in the Amazon",
+            "image": "images/amazon.jpg",
+            "content": "Embark on an unforgettable journey through the Amazon rainforest.",
+            "published": true,
+            "created_date": "2022-04-01T11:00:00Z",
+            "updated_date": "2023-06-26T10:09:18.990Z",
+            "published_date": "2022-04-02T13:30:00Z",
+            "category": [
+                9,
+                15
+            ]
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 5,
+        "fields": {
+            "author": 12,
+            "title": "Living a Healthy Lifestyle",
+            "image": "images/healthy-lifestyle.jpg",
+            "content": "Discover the secrets to maintaining a healthy and balanced lifestyle.",
+            "published": true,
+            "created_date": "2022-05-01T16:45:00Z",
+            "updated_date": "2023-06-26T10:11:13.853Z",
+            "published_date": "2022-05-02T18:20:00Z",
+            "category": [
+                8,
+                9,
+                10,
+                14
+            ]
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 6,
+        "fields": {
+            "author": 12,
+            "title": "Introduction to Python Programming",
+            "image": "images/python.jpg",
+            "content": "Learn the basics of Python programming language.",
+            "published": true,
+            "created_date": "2022-06-01T10:15:00Z",
+            "updated_date": "2023-06-26T10:10:56.348Z",
+            "published_date": "2022-06-02T12:05:00Z",
+            "category": [
+                7,
+                12,
+                13
+            ]
+        }
+    }
+]

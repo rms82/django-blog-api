@@ -1,0 +1,79 @@
+[
+    {
+        "model": "blog.category",
+        "pk": 7,
+        "fields": {
+            "name": "programming"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 8,
+        "fields": {
+            "name": "food"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 9,
+        "fields": {
+            "name": "nature"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 10,
+        "fields": {
+            "name": "lifestyle"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 11,
+        "fields": {
+            "name": "frontend"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 12,
+        "fields": {
+            "name": "backend"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 13,
+        "fields": {
+            "name": "AI"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 14,
+        "fields": {
+            "name": "drinks"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 15,
+        "fields": {
+            "name": "jungle"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 16,
+        "fields": {
+            "name": "sea"
+        }
+    },
+    {
+        "model": "blog.category",
+        "pk": 17,
+        "fields": {
+            "name": "desert"
+        }
+    }
+]

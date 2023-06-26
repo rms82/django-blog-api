@@ -7,11 +7,12 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.shortcuts import get_object_or_404
-from django.core.mail import send_mail
+from mail_templated import send_mail
 
 from .serializers import (RegisterSerializer, CustomTokenObtainPairSerializer,
                           ChangePasswordSerializer, ProfileSerializer, AuthTokenSerializer)
 from accounts.models import Profile
+
 
 
 class Home(APIView):
@@ -109,13 +110,7 @@ class ProfileApiView(RetrieveUpdateAPIView):
 
 class Email(APIView):
     def get(self, request, *args, **kwargs):
-        send_mail(
-            "This is the title",
-            "Here is the message.",
-            "from@example.com",
-            ["to@example.com"],
-            fail_silently=False,
-        )
+        send_mail('email/hello.tpl', {'name': 'Reza'}, 'from_email', ['example@gmail.com'])
         return Response({
             'detail': 'sent'
         })
